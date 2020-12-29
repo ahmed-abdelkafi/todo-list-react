@@ -26,21 +26,26 @@ class App extends Component {
             title:this.state.item
         };
         const updatedItem = [...this.state.items,newItem];
-        this.setState({
-            items:updatedItem,
-            item:"",
-            id:uuidv4(),
-            editItem:false,
+        if(this.state.item.length>0)
+        {
+            this.setState({
+                items:updatedItem,
+                item:"",
+                id:uuidv4(),
+                editItem:false,
 
-        },() =>console.log(this.state))
+            },() =>console.log(this.state))
+        }
+
 
 
     }
     clearList = () => {
-        console.log("clearlist")
+        this.setState({items:[]})
     }
     handleDelete = (id) => {
-        console.log(`handleDelete ${id}`)
+        const newItem = this.state.items.filter(item => item.id!==id)
+        this.setState({items:newItem})
     }
     handleEdit = (id) => {
         console.log(`handleEdit ${id}`)
