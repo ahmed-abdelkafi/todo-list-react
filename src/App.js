@@ -6,8 +6,37 @@ import TodoList from "./components/TodoList";
 
 
 class App extends Component {
-
+    state = {
+        itmes : [
+            {
+                id: 1,
+                title:"wake up"
+            },
+            {
+                id: 2,
+                title:"eating"
+            }],
+        id:uuidv4(),
+        item:"",
+        editItem:false
+    }
+    handleChange = (e) => {
+        console.log("handleChange")
+    }
+    handleSumbit = (e) => {
+        console.log("handleSumbit")
+    }
+    clearList = () => {
+        console.log("clearlist")
+    }
+    handleDelete = (id) => {
+        console.log(`handleDelete ${id}`)
+    }
+    handleEdit = (id) => {
+        console.log(`handleEdit ${id}`)
+    }
     render() {
+
         return (
             <div className="container">
                 <div className="row" >
