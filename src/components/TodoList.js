@@ -12,6 +12,7 @@ class TodoList extends Component {
                     {items.map(item=>
                     {return (<Item
                             key={item.id}
+                            title={item.title}
                             handleEdit={()=>handleEdit(item.id)}
                             handleDelete={()=>handleDelete(item.id)}/>
                     )})}
