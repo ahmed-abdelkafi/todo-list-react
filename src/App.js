@@ -61,11 +61,10 @@ class App extends Component {
                             handleSubmit={this.handleSubmit}
                         />
                         <TodoList
-                            clearList={this.clearList}
                             items={this.state.items}
-                            handleDelete={this.handleDelete}
                             handleEdit={this.handleEdit}
-
+                            handleDelete={this.handleDelete}
+                            clearList={this.clearList}
                         />
                     </div>
 
